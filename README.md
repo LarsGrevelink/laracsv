@@ -160,7 +160,8 @@ $csvExporter->beforeEach(function ($product) {
 
 For larger datasets, which can become more memory consuming, a builder instance can be used to process the results in chunks. Similar to the row-related hook, a chunk-related hook can be used in this case for e.g. eager loading or similar chunk based operations. The behaviour between both hooks is similar; it gets called before each chunk and has the entire collection as an argument. **In case `false` is returned the entire chunk gets skipped and the code continues with the next one.**
 
-```$export = new Export();
+```php
+$export = new Export();
 
 // Perform chunk related operations
 $export->beforeEachChunk(function ($collection) {
